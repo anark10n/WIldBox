@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Enemy.gd" type="Script" id=1]
+[ext_resource path="res://Spritesheets/spritesheet_characters.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Health.tscn" type="PackedScene" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+height = 25.7194
+
+[node name="Enemy" type="KinematicBody2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 426, 0, 34, 44 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( -10.4681, 0 )
+shape = SubResource( 1 )
+
+[node name="Health" parent="." instance=ExtResource( 3 )]
+health = 1

@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/BulletContainer.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/SpawnContainer.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/EnemyContainer.gd" type="Script" id=5]
+[ext_resource path="res://Tiles/Tiles.tres" type="TileSet" id=6]
+[ext_resource path="res://Scenes/GUI.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Enemy.tscn" type="PackedScene" id=8]
+
+[node name="Main" type="Node2D"]
+position = Vector2( 86.3462, 83.4327 )
+script = ExtResource( 2 )
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( -22, 5 )
+tile_set = ExtResource( 6 )
+format = 1
+tile_data = PoolIntArray( -65536, 1, 0, -65535, 1, 2, -65534, 1, 2, -65533, 1, 2, -65532, 1, 262148, -65531, 1, 196612, -65530, 1, 196612, -65529, 1, 196612, -65528, 1, 196612, -65527, 1, 196612, -65526, 1, 196612, -65525, 1, 196612, -65524, 1, 196612, -65523, 1, 262149, -65522, 1, 2, -65521, 1, 2, -65520, 1, 2, -65519, 1, 1, 0, 1, 65538, 1, 2, 0, 2, 2, 0, 3, 2, 0, 4, 1, 65543, 5, 1, 196613, 6, 1, 196613, 7, 1, 196613, 8, 1, 196613, 9, 1, 196613, 10, 1, 196613, 11, 1, 196613, 12, 1, 196613, 13, 1, 65544, 14, 2, 0, 15, 2, 0, 16, 2, 0, 17, 1, 65538, 65536, 1, 65538, 65537, 2, 0, 65538, 2, 0, 65539, 2, 0, 65540, 2, 0, 65541, 2, 0, 65542, 2, 0, 65543, 2, 0, 65544, 2, 0, 65545, 2, 0, 65546, 2, 0, 65547, 2, 0, 65548, 2, 0, 65549, 2, 0, 65550, 2, 0, 65551, 2, 0, 65552, 2, 0, 65553, 1, 65538, 131072, 1, 262146, 131073, 1, 8, 131074, 2, 0, 131075, 2, 4, 131076, 2, 2, 131077, 2, 2, 131078, 2, 4, 131079, 2, 2, 131080, 2, 0, 131081, 2, 2, 131082, 2, 0, 131083, 2, 4, 131084, 2, 0, 131085, 2, 4, 131086, 2, 2, 131087, 2, 0, 131088, 1, 7, 131089, 1, 262147, 196608, 1, 131076, 196609, 1, 131077, 196610, 2, 0, 196611, 2, 4, 196612, 2, 0, 196613, 2, 2, 196614, 2, 0, 196615, 2, 4, 196616, 2, 2, 196617, 2, 2, 196618, 2, 0, 196619, 2, 2, 196620, 2, 4, 196621, 2, 0, 196622, 2, 0, 196623, 2, 0, 196624, 1, 131076, 196625, 1, 131077, 262144, 1, 131076, 262145, 1, 131077, 262146, 2, 0, 262147, 2, 0, 262148, 2, 4, 262149, 2, 4, 262150, 2, 4, 262151, 2, 4, 262152, 2, 2, 262153, 2, 2, 262154, 2, 0, 262155, 2, 0, 262156, 2, 0, 262157, 2, 0, 262158, 2, 0, 262159, 2, 0, 262160, 1, 131076, 262161, 1, 131077, 327680, 1, 327682, 327681, 1, 65544, 327682, 2, 0, 327683, 2, 4, 327684, 2, 0, 327685, 2, 0, 327686, 2, 0, 327687, 2, 0, 327688, 2, 0, 327689, 2, 0, 327690, 2, 4, 327691, 2, 2, 327692, 2, 2, 327693, 2, 2, 327694, 2, 0, 327695, 2, 0, 327696, 1, 65543, 327697, 1, 327683, 393216, 1, 65538, 393217, 2, 0, 393218, 2, 0, 393219, 2, 0, 393220, 2, 0, 393221, 2, 0, 393222, 2, 0, 393223, 2, 0, 393224, 2, 0, 393225, 2, 0, 393226, 2, 0, 393227, 2, 0, 393228, 2, 0, 393229, 2, 0, 393230, 2, 0, 393231, 2, 0, 393232, 2, 0, 393233, 1, 65538, 458752, 1, 65538, 458753, 2, 0, 458754, 2, 0, 458755, 2, 0, 458756, 1, 7, 458757, 1, 196612, 458758, 1, 196612, 458759, 1, 196612, 458760, 1, 196612, 458761, 1, 196612, 458762, 1, 196612, 458763, 1, 196612, 458764, 1, 196612, 458765, 1, 8, 458766, 2, 0, 458767, 2, 0, 458768, 2, 0, 458769, 1, 65538, 524288, 1, 65536, 524289, 1, 2, 524290, 1, 2, 524291, 1, 2, 524292, 1, 327684, 524293, 1, 196613, 524294, 1, 196613, 524295, 1, 196613, 524296, 1, 196613, 524297, 1, 196613, 524298, 1, 196613, 524299, 1, 196613, 524300, 1, 196613, 524301, 1, 327685, 524302, 1, 2, 524303, 1, 2, 524304, 1, 2, 524305, 1, 65537 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 551.689, 276.356 )
+
+[node name="BulletContainer" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="EnemyContainer" type="Node2D" parent="."]
+script = ExtResource( 5 )
+
+[node name="GUI" parent="." instance=ExtResource( 7 )]
+
+[node name="SpawnContainer" type="Node2D" parent="."]
+script = ExtResource( 4 )
+Enemy = ExtResource( 8 )
+
+[node name="Locations" type="Node2D" parent="SpawnContainer"]
+
+[node name="Spawn" type="Position2D" parent="SpawnContainer/Locations"]
+position = Vector2( 161.641, 97.9089 )
+
+[node name="Spawn2" type="Position2D" parent="SpawnContainer/Locations"]
+position = Vector2( 835.808, 126.683 )
+
+[node name="Spawn3" type="Position2D" parent="SpawnContainer/Locations"]
+position = Vector2( 954.775, 235.379 )
+
+[node name="Spawn4" type="Position2D" parent="SpawnContainer/Locations"]
+position = Vector2( 490.984, 424.669 )
+
+[node name="Spawn5" type="Position2D" parent="SpawnContainer/Locations"]
+position = Vector2( 182.202, 284.113 )
+
+[node name="Spawn6" type="Position2D" parent="SpawnContainer/Locations"]
+position = Vector2( 801.939, 373.597 )
+
+[node name="Spawn7" type="Position2D" parent="SpawnContainer/Locations"]
+position = Vector2( 381.44, 152.437 )
+
+[node name="Timer" type="Timer" parent="SpawnContainer"]
+wait_time = 5.0
+autostart = true
+[connection signal="timeout" from="SpawnContainer/Timer" to="SpawnContainer" method="_on_Timer_timeout"]
